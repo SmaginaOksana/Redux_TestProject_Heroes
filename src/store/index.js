@@ -1,6 +1,7 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import { thunk } from "redux-thunk";
-import heroes from "../reducers/heroes";
+// import heroes from "../reducers/heroes"; // создан с пом. createReducer
+import heroes from "../components/HeroesList/HeroesSlice"; // создан с пом. createSlice
 import filter from "../reducers/filters";
 
 const stringMiddleware = () => (next) => (action) => {

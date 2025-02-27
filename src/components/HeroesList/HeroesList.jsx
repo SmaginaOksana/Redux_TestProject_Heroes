@@ -4,19 +4,26 @@ import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { createSelector } from "reselect";
 
+import // fetchHeroes,
+// heroesFetching,
+// heroesFetched,
+// heroesFetchingError,
+// heroDeleted,
+"../../actions";
+
 import {
-  fetchHeroes,
   heroesFetching,
   heroesFetched,
   heroesFetchingError,
   heroDeleted,
-} from "../../actions";
+  fetchHeroes,
+} from "./HeroesSlice";
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
 
 import "./heroesList.scss";
 import filter from "../../reducers/filters";
-import heroes from "../../reducers/heroes";
+// import heroes from "../../reducers/heroes";
 
 const HeroesList = () => {
   // используем библиотеку createSelector для оптимизации, т.к. хук useSelector вызывает много рендеров
@@ -45,7 +52,8 @@ const HeroesList = () => {
     //   .then((data) => dispatch(heroesFetched(data)))
     //   .catch(() => dispatch(heroesFetchingError()));
 
-    dispatch(fetchHeroes(request)); // для thunk
+    // dispatch(fetchHeroes(request)); // для thunk
+    dispatch(fetchHeroes()); // для createAsyncThunk
     // eslint-disable-next-line
   }, []);
 
