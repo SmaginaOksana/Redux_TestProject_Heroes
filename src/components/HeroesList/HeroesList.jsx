@@ -17,7 +17,7 @@ import {
   heroesFetchingError,
   heroDeleted,
   fetchHeroes,
-  selectAll,
+  // selectAll,
 } from "./HeroesSlice";
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
@@ -25,24 +25,25 @@ import Spinner from "../spinner/Spinner";
 import "./heroesList.scss";
 import filter from "../../reducers/filters";
 // import heroes from "../../reducers/heroes";
+import { filteredHeroesSelector } from "./HeroesSlice";
 
 const HeroesList = () => {
   // используем библиотеку createSelector для оптимизации, т.к. хук useSelector вызывает много рендеров
   // думает, что каждый раз в state что-то изменилось и выполняет рендер даже если ничего не менялось
   // поэтому с помощью библиотеки мемоизируем состояние
-  const filteredHeroesSelector = createSelector(
-    (state) => state.filter.activeFilter,
-    // (state) => state.heroes.heroes,
-    selectAll,
-    (filter, heroes) => {
-      // heroes возьмутся из рез-та работы SelectAll
-      if (filter === "all") {
-        return heroes;
-      } else {
-        return heroes.filter((item) => item.element === filter);
-      }
-    }
-  );
+  // const filteredHeroesSelector = createSelector(
+  //   (state) => state.filter.activeFilter,
+  //   // (state) => state.heroes.heroes,
+  //   selectAll,
+  //   (filter, heroes) => {
+  //     // heroes возьмутся из рез-та работы SelectAll
+  //     if (filter === "all") {
+  //       return heroes;
+  //     } else {
+  //       return heroes.filter((item) => item.element === filter);
+  //     }
+  //   }
+  // );
   const filteredHeroes = useSelector(filteredHeroesSelector);
 
   const { heroesLoadingStatus } = useSelector((state) => state.heroes);
