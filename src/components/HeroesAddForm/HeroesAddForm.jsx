@@ -17,7 +17,9 @@ const HeroesAddForm = () => {
   //   (state) => state.filter
   // );
   const { filtersLoadingStatus } = useSelector((state) => state.filters);
-  const filters = selectAll(store.getState());
+  const filters = selectAll(store.getState()); // не можем создать эту переменную в слайсе и
+  // вытащить фильтры, так как нам для этого необходим стор, а в слайс он формируется,
+  // и нельзя вытащить то, чего еще не существует на стадии формир-я
 
   const dispatch = useDispatch();
   const { request } = useHttp();
