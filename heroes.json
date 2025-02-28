@@ -17,44 +17,38 @@
       "name": "Морской герой",
       "description": "Как аквамен, но не из DC",
       "element": "water"
-    },
-    {
-      "id": "7a46625d-0429-4732-a36b-1090c5888795",
-      "name": "Oksana",
-      "description": "sdv s",
-      "element": "fire"
     }
   ],
   "filters": [
     {
+      "id": "all",
       "name": "all",
       "label": "Все",
-      "className": "btn-outline-dark",
-      "id": "6b3b"
+      "className": "btn-outline-dark"
     },
     {
+      "id": "fire",
       "name": "fire",
       "label": "Огонь",
-      "className": "btn-danger",
-      "id": "ed50"
+      "className": "btn-danger"
     },
     {
+      "id": "water",
       "name": "water",
       "label": "Вода",
-      "className": "btn-primary",
-      "id": "338d"
+      "className": "btn-primary"
     },
     {
+      "id": "wind",
       "name": "wind",
       "label": "Ветер",
-      "className": "btn-success",
-      "id": "ad51"
+      "className": "btn-success"
     },
     {
+      "id": "earth",
       "name": "earth",
       "label": "Земля",
-      "className": "btn-secondary",
-      "id": "365b"
+      "className": "btn-secondary"
     }
   ]
 }

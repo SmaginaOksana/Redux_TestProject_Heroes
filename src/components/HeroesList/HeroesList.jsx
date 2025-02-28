@@ -23,7 +23,7 @@ import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
 
 import "./heroesList.scss";
-import filter from "../../reducers/filters";
+// import filters from "../../reducers/filters";
 // import heroes from "../../reducers/heroes";
 import { filteredHeroesSelector } from "./HeroesSlice";
 

@@ -67,15 +67,15 @@ export default reducer;
 const { selectAll } = heroesAdapter.getSelectors((state) => state.heroes);
 
 export const filteredHeroesSelector = createSelector(
-  (state) => state.filter.activeFilter,
+  (state) => state.filters.activeFilter,
   // (state) => state.heroes.heroes,
   selectAll,
-  (filter, heroes) => {
+  (filters, heroes) => {
     // heroes возьмутся из рез-та работы SelectAll
-    if (filter === "all") {
+    if (filters === "all") {
       return heroes;
     } else {
-      return heroes.filter((item) => item.element === filter);
+      return heroes.filter((item) => item.element === filters);
     }
   }
 );
