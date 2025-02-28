@@ -17,6 +17,7 @@ import {
   heroesFetchingError,
   heroDeleted,
   fetchHeroes,
+  selectAll,
 } from "./HeroesSlice";
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
@@ -31,8 +32,10 @@ const HeroesList = () => {
   // поэтому с помощью библиотеки мемоизируем состояние
   const filteredHeroesSelector = createSelector(
     (state) => state.filter.activeFilter,
-    (state) => state.heroes.heroes,
+    // (state) => state.heroes.heroes,
+    selectAll,
     (filter, heroes) => {
+      // heroes возьмутся из рез-та работы SelectAll
       if (filter === "all") {
         return heroes;
       } else {
